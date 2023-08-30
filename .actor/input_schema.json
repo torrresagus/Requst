@@ -1,0 +1,83 @@
+{
+    "title": "Python Selenium Scraper",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "start_urls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "URLs to start with",
+            "prefill": [
+                { "url": "https://www.senado.gob.ar/parlamentario/parlamentaria/avanzada" }
+            ],
+            "editor": "requestListSources"
+        },
+        "max_depth": {
+            "title": "Maximum depth",
+            "type": "integer",
+            "description": "Depth to which to scrape to",
+            "default": 1
+        },
+        "autor": {
+            "title": "Autor",
+            "type": "string",
+            "description": "Autor del Proyecto",
+            "editor": "textfield"
+        },
+        "año": {
+            "title": "Año",
+            "type": "string",
+            "description": "Año de expediente",
+            "editor": "textfield"
+        },
+        "numero": {
+            "title": "Numero",
+            "type": "string",
+            "description": "Numero de expediente",
+            "editor": "textfield"
+        },
+        "palabra_clave": {
+            "title": "Palabra Clave",
+            "type": "string",
+            "description": "Palabra clave para la búsqueda",
+            "editor": "textfield"
+        },
+        "tipo_documento": {
+            "title": "Tipo de Documento",
+            "type": "string",
+            "description": "Tipo de documento para la búsqueda",
+            "editor": "textfield"
+        },
+        "origen_expediente": {
+            "title": "Origen de Expediente",
+            "type": "string",
+            "description": "Origen de Expediente para la búsqueda",
+            "editor": "textfield"
+        },
+        "tipo_expediente": {
+            "title": "Tipo de Expediente",
+            "type": "string",
+            "description": "Tipo de Expediente para la búsqueda",
+            "editor": "textfield"
+        },
+        "opcion": {
+            "title": "Opción (Y/O)",
+            "type": "string",
+            "description": "Opción para la búsqueda: Y u O",
+            "editor": "textfield"
+        },
+        "segunda_palabra_clave": {
+            "title": "Segunda Palabra Clave",
+            "type": "string",
+            "description": "Segunda palabra clave para la búsqueda",
+            "editor": "textfield"
+        },
+        "comisiones": {
+            "title": "Comisiones",
+            "type": "string",
+            "description": "Comisión para la búsqueda",
+            "editor": "textfield"
+        }
+    },
+    "required": ["start_urls", "autor"]
+}
