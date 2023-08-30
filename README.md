@@ -31,14 +31,4 @@ Este proyecto es un Actor de Apify diseñado para automatizar la búsqueda y des
 
 Si desea contribuir al proyecto, por favor haga un "Fork" del repositorio y luego un "Pull Request".
 
-## Licencia
-
-Este proyecto está bajo la licencia MIT.
-
-## Contacto y Soporte
-
-Para más información o soporte, contacte a [tu_email@email.com](mailto:tu_email@email.com).
-
 ---
-
-Este README debería dar a los usuarios una buena idea de qué esperar del proyecto, cómo instalarlo y cómo usarlo en el contexto de un Actor de Apify.
