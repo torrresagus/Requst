@@ -1,81 +1,44 @@
-## BeautifulSoup and Requests template
+## Descripción del Proyecto
 
-A template for [web scraping](https://apify.com/web-scraping) data from websites enqueued from starting URL using Python. The URL of the web page is passed in via input, which is defined by the [input schema](https://docs.apify.com/platform/actors/development/input-schema). The template uses the [Requests](https://requests.readthedocs.io/) to get the HTML of the page and the [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to parse the data from it. Enqueued URLs are available in [request queue](https://docs.apify.com/sdk/python/reference/class/RequestQueue). The data are then stored in a [dataset](https://docs.apify.com/platform/storage/dataset) where you can easily access them.
+Este proyecto es un Actor de Apify diseñado para automatizar la búsqueda y descarga de datos desde el sitio web del Senado de Argentina. Utiliza Python y varias bibliotecas para realizar solicitudes HTTP, analizar HTML y manejar datos.
 
-## Included features
+## Características
 
-- **[Apify SDK](https://docs.apify.com/sdk/python/)** for Python - a toolkit for building [Actors](https://apify.com/actors) and scrapers in Python
-- **[Input schema](https://docs.apify.com/platform/actors/development/input-schema)** - define and easily validate a schema for your actor's input
-- **[Request queue](https://docs.apify.com/sdk/python/docs/concepts/storages#working-with-request-queues)** - queues into which you can put the URLs you want to scrape
-- **[Dataset](https://docs.apify.com/sdk/python/docs/concepts/storages#working-with-datasets)** - store structured data where each object stored has the same attributes
-- **[Requests](https://requests.readthedocs.io/)** - an elegant and simple HTTP library for Python
-- **[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)** - a Python library for pulling data out of HTML and XML files
+- Realiza una búsqueda avanzada en el sitio web del Senado utilizando criterios específicos.
+- Descarga los datos en formato Excel.
+- Convierte los datos a formato JSON.
+- Se integra con la plataforma Apify para manejar la entrada y salida de datos.
 
-## How it works
+## Requisitos
 
-This code is a Python script that uses Requests and Beautiful Soup to scrape web pages and extract data from them. Here's a brief overview of how it works:
+- Apify Account
+- Python 3.x
+- Bibliotecas: `requests`, `pandas`, `BeautifulSoup`, `xlrd`
 
-- The script reads the input data from the Actor instance, which is expected to contain a `start_urls` key with a list of URLs to scrape and a `max_depth` key with the maximum depth of nested links to follow.
-- The script enqueues the starting URLs in the default request queue and sets their depth to 0.
-- The script processes the requests in the queue one by one, fetching the URL using Requests and parsing it using BeautifulSoup.
-- If the depth of the current request is less than the maximum depth, the script looks for nested links in the page and enqueues their targets in the request queue with an incremented depth.
-- The script extracts the desired data from the page (in this case, all the links) and pushes it to the default dataset using the `push_data` method of the Actor instance.
-- The script catches any exceptions that occur during the scraping process and logs an error message using the `Actor.log.exception` method.
-- This code demonstrates how to use Python and the Apify SDK to scrape web pages and extract specific data from them.
+## Instalación y Despliegue en Apify
 
-## Resources
+1. Clone este repositorio.
+2. Suba el código a su Actor en Apify.
+3. Instale las dependencias necesarias.
 
-- [BeautifulSoup Scraper](https://apify.com/apify/beautifulsoup-scraper)
-- [Python tutorials in Academy](https://docs.apify.com/academy/python)
-- [Web scraping with Beautiful Soup and Requests](https://blog.apify.com/web-scraping-with-beautiful-soup/)
-- [Beautiful Soup vs. Scrapy for web scraping](https://blog.apify.com/beautiful-soup-vs-scrapy-web-scraping/)
-- [Integration with Zapier](https://apify.com/integrations), Make, Google Drive, and others
-- [Video guide on getting scraped data using Apify API](https://www.youtube.com/watch?v=ViYYDHSBAKM)
-- [Video introduction to Python SDK](https://www.youtube.com/watch?v=C8DmvJQS3jk)
+## Uso en Apify
 
+1. Configure las entradas del Actor según sus necesidades.
+2. Ejecute el Actor.
+3. Revise el dataset para los resultados y los logs para el seguimiento.
 
-## Getting started
+## Contribución
 
-For complete information [see this article](https://docs.apify.com/platform/actors/development#build-actor-at-apify-console). In short, you will:
+Si desea contribuir al proyecto, por favor haga un "Fork" del repositorio y luego un "Pull Request".
 
-1. Build the Actor
-2. Run the Actor
+## Licencia
 
-## Pull the Actor for local development
+Este proyecto está bajo la licencia MIT.
 
-If you would like to develop locally, you can pull the existing Actor from Apify console using Apify CLI:
+## Contacto y Soporte
 
-1. Install `apify-cli`
+Para más información o soporte, contacte a [tu_email@email.com](mailto:tu_email@email.com).
 
-    **Using Homebrew**
+---
 
-    ```
-    brew install apify/tap/apify-cli
-    ```
-
-    **Using NPM**
-
-    ```
-    npm -g install apify-cli
-    ```
-
-2. Pull the Actor by its unique `<ActorId>`, which is one of the following:
-    - unique name of the Actor to pull (e.g. "apify/hello-world")
-    - or ID of the Actor to pull (e.g. "E2jjCZBezvAZnX8Rb")
-
-    You can find both by clicking on the Actor title at the top of the page, which will open a modal containing both Actor unique name and Actor ID.
-
-    This command will copy the Actor into the current directory on your local machine.
-
-    ```
-    apify pull <ActorId>
-    ```
-
-## Documentation reference
-
-To learn more about Apify and Actors, take a look at the following resources:
-
-- [Apify SDK for JavaScript documentation](https://docs.apify.com/sdk/js)
-- [Apify SDK for Python documentation](https://docs.apify.com/sdk/python)
-- [Apify Platform documentation](https://docs.apify.com/platform)
-- [Join our developer community on Discord](https://discord.com/invite/jyEM2PRvMU)
+Este README debería dar a los usuarios una buena idea de qué esperar del proyecto, cómo instalarlo y cómo usarlo en el contexto de un Actor de Apify.
